@@ -1,0 +1,30 @@
+{
+  "name": "ubuntu-qt-base",
+  "version-string": "1.0.0",
+  "builtin-baseline": "4702e381dbbd9b54d3f7e1eb565cd8981c1814cd",
+  "dependencies": [
+    {
+      "name": "qtbase",
+      "features": [
+        "widgets"
+      ]
+    },
+    "qtsvg",
+    "qtdeclarative"
+  ],
+  "overrides": [
+    {
+      "name": "qtbase",
+      "version": "6.11.3",
+      "port-version": 1
+    },
+    {
+      "name": "qtsvg",
+      "version": "6.11.3"
+    },
+    {
+      "name": "qtdeclarative",
+      "version": "6.11.3"
+    }
+  ]
+}
