@@ -45,6 +45,15 @@ docker buildx build --platform linux/amd64,linux/arm64 \
   -t mateuszokroj1/ubuntu-qt-base:latest --push .
 ```
 
+## CI/CD
+
+Pull requests targeting `main` or `releases/*` build both supported
+architectures without publishing the image. Pushes to those branches, and
+manual deployment runs, publish the multi-architecture image as
+`mateuszokroj1/ubuntu-qt-base:latest`. Configure the `DOCKER_LOGIN` and
+`DOCKER_PASS` secrets in the GitHub Actions `production` environment to enable
+publishing.
+
 ## Qt and vcpkg packages
 
 The `vcpkg.json` manifest contains the pinned Qt package baseline and versions:
