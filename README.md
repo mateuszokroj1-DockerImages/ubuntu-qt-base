@@ -47,12 +47,12 @@ docker buildx build --platform linux/amd64,linux/arm64 \
 
 ## CI/CD
 
-Pull requests targeting `main` or `releases/*` build both supported
-architectures without publishing the image. Pushes to those branches, and
-manual deployment runs, publish the multi-architecture image as
+Pushes to `main` or `releases/*`, and manual deployment runs, build the
+`linux/amd64` and `linux/arm64` images in parallel on native GitHub-hosted
+runners. After both builds succeed, the workflow publishes a single
+multi-architecture manifest as
 `mateuszokroj1/ubuntu-qt-base:latest`. Configure the `DOCKER_LOGIN` and
-`DOCKER_PASS` secrets in the GitHub Actions `production` environment to enable
-publishing.
+`DOCKER_DEPLOYMENT_KEY` GitHub Actions secrets to enable publishing.
 
 ## Qt and vcpkg packages
 
